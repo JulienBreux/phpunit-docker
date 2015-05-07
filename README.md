@@ -6,14 +6,7 @@
 
 * [PHPUnit](https://www.phpunit.de/)
   * Latest snapshot (master)
-  * [`4.7`](https://github.com/sebastianbergmann/phpunit/blob/master/ChangeLog-4.7.md)
-  * [`4.6`](https://github.com/sebastianbergmann/phpunit/blob/master/ChangeLog-4.6.md)
-  * [`4.5`](https://github.com/sebastianbergmann/phpunit/blob/master/ChangeLog-4.5.md)
-  * [`4.4`](https://github.com/sebastianbergmann/phpunit/blob/master/ChangeLog-4.4.md)
-  * [`4.3`](https://github.com/sebastianbergmann/phpunit/blob/master/ChangeLog-4.3.md)
-  * [`4.2`](https://github.com/sebastianbergmann/phpunit/blob/master/ChangeLog-4.2.md)
-  * [`4.1`](https://github.com/sebastianbergmann/phpunit/blob/master/ChangeLog-4.1.md)
-  * [`4.0`](https://github.com/sebastianbergmann/phpunit/blob/master/ChangeLog-4.0.md)
+  * [`4.6.6`](https://github.com/sebastianbergmann/phpunit/blob/master/ChangeLog-4.6.md#phpunit-466)
 * [PHP](http://php.net) [5.6](http://php.net/ChangeLog-5.php)
 
 ## Installation / Usage
