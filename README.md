@@ -6,7 +6,9 @@
 
 * [PHPUnit](https://www.phpunit.de/)
   * Latest snapshot (master)
-  * [`4.6.6`](https://github.com/sebastianbergmann/phpunit/blob/master/ChangeLog-4.6.md#phpunit-466)
+  * [`4.7.7`](https://github.com/sebastianbergmann/phpunit/blob/4.7/ChangeLog-4.7.md#477---2015-07-13)
+  * [`4.6.10`](https://github.com/sebastianbergmann/phpunit/blob/4.6/ChangeLog-4.6.md#phpunit-4610)
+  * [`4.6.6`](https://github.com/sebastianbergmann/phpunit/blob/4.6/ChangeLog-4.6.md#phpunit-466)
 * [PHP](http://php.net) [5.6](http://php.net/ChangeLog-5.php)
 
 ## Installation / Usage
@@ -17,7 +19,7 @@
 	$ docker pull phpunit/phpunit
 	```
 
-2. Create a phpunit.xml defining your spec suites.
+2. Create a phpunit.xml defining your tests suites.
 
     ``` xml
 ...
