@@ -52,5 +52,5 @@ To run, test and develop the PHPUnit Dockerfile itself, you must use the source 
 4. Test running the container:
 
     ``` sh
-	$ docker run phpunit/phpunit help
+	$ docker run phpunit/phpunit --help
 	```
