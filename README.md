@@ -17,7 +17,7 @@
 	$ docker pull phpunit/phpunit
 	```
 
-2. Create a phpunit.xml defining your spec suites.
+2. Create a phpunit.xml defining your tests suites.
 
     ``` xml
 ...

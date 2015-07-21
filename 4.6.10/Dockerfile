@@ -7,7 +7,7 @@ WORKDIR /tmp
 
 # Run composer and phpunit installation.
 RUN composer selfupdate && \
-  composer require "phpunit/phpunit:~4.6.6" && \
+  composer require "phpunit/phpunit:~4.6.10" && \
   ln -s /tmp/vendor/bin/phpunit /usr/local/bin/phpunit
 
 # Set up the application directory.
