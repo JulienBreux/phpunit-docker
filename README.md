@@ -10,6 +10,7 @@
   * [`4.6.10`](https://github.com/sebastianbergmann/phpunit/blob/4.6/ChangeLog-4.6.md#phpunit-4610)
   * [`4.6.6`](https://github.com/sebastianbergmann/phpunit/blob/4.6/ChangeLog-4.6.md#phpunit-466)
 * [PHP](http://php.net) [5.6](http://php.net/ChangeLog-5.php)
+* [Xdebug](http://xdebug.org/) [2.3.3](http://xdebug.org/updates.php#x_2_3_3)
 
 ## Installation / Usage
 
