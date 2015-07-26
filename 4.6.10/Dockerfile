@@ -1,8 +1,8 @@
-# PHPUnit Docker Container
+# PHPUnit Docker Container.
 FROM composer/composer
 MAINTAINER Julien Breux <julien.breux@gmail.com>
 
-# Goto temporary directory
+# Goto temporary directory.
 WORKDIR /tmp
 
 # Run composer and phpunit installation.
