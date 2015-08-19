@@ -1,6 +1,6 @@
 # PHPUnit Docker Container
 
-[![Docker pull](https://img.shields.io/docker/pulls/phpunit/phpunit.svg)](https://hub.docker.com/r/phpunit/phpunit/) [![Docker pull](https://img.shields.io/docker/stars/phpunit/phpunit.svg)](https://hub.docker.com/r/phpunit/phpunit/) [![Github issues](https://img.shields.io/github/issues/JulienBreux/phpunit-docker.svg)](https://github.com/JulienBreux/phpunit-docker/issues) [![License](https://img.shields.io/github/license/JulienBreux/phpunit-docker.svg)](https://github.com/JulienBreux/phpunit-docker/blob/master/LICENSE.md)
+[![Docker pull](https://img.shields.io/docker/pulls/phpunit/phpunit.svg)](https://hub.docker.com/r/phpunit/phpunit/) [![Docker pull](https://img.shields.io/docker/stars/phpunit/phpunit.svg)](https://hub.docker.com/r/phpunit/phpunit/) [![Github issues](https://img.shields.io/github/issues/JulienBreux/phpunit-docker.svg)](https://github.com/JulienBreux/phpunit-docker/issues) [![License](https://img.shields.io/github/license/JulienBreux/phpunit-docker.svg)](https://github.com/JulienBreux/phpunit-docker/blob/master/LICENSE)
 
 
 [Docker](https://www.docker.com) container to install and run [PHPUnit](https://phpunit.de/).
