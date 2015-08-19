@@ -1,5 +1,8 @@
 # PHPUnit Docker Container
 
+[![Docker pull](https://img.shields.io/docker/pulls/phpunit/phpunit.svg)](https://hub.docker.com/r/phpunit/phpunit/) [![Docker pull](https://img.shields.io/docker/stars/phpunit/phpunit.svg)](https://hub.docker.com/r/phpunit/phpunit/) [![Github issues](https://img.shields.io/github/issues/JulienBreux/phpunit-docker.svg)](https://github.com/JulienBreux/phpunit-docker/issues) [![License](https://img.shields.io/github/license/JulienBreux/phpunit-docker.svg)](https://github.com/JulienBreux/phpunit-docker/blob/master/LICENSE.md)
+
+
 [Docker](https://www.docker.com) container to install and run [PHPUnit](https://phpunit.de/).
 
 ## Features
@@ -12,8 +15,8 @@
   * [`4.7.7`](https://github.com/sebastianbergmann/phpunit/blob/4.7/ChangeLog-4.7.md#477---2015-07-13)
   * [`4.6.10`](https://github.com/sebastianbergmann/phpunit/blob/4.6/ChangeLog-4.6.md#phpunit-4610)
   * [`4.6.6`](https://github.com/sebastianbergmann/phpunit/blob/4.6/ChangeLog-4.6.md#phpunit-466)
-* [PHP](http://php.net) [5.6](http://php.net/ChangeLog-5.php)
-* [Xdebug](http://xdebug.org/) [2.3.3](http://xdebug.org/updates.php#x_2_3_3)
+* [PHP](https://php.net) [5.6](https://php.net/ChangeLog-5.php)
+* [Xdebug](https://xdebug.org/) [2.3.3](https://xdebug.org/updates.php#x_2_3_3)
 
 ## Installation / Usage
 
