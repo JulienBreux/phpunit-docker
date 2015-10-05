@@ -9,6 +9,7 @@
 
 * [PHPUnit](https://www.phpunit.de/)
   * Latest snapshot (master)
+  * [`5.0.3`](https://github.com/sebastianbergmann/phpunit/blob/5.0/ChangeLog-5.0.md#503---2015-10-02)
   * [`4.8.5`](https://github.com/sebastianbergmann/phpunit/blob/4.8/ChangeLog-4.8.md#485---2015-08-19)
   * [`4.8.4`](https://github.com/sebastianbergmann/phpunit/blob/4.8/ChangeLog-4.8.md#484---2015-08-15)
   * [`4.8.3`](https://github.com/sebastianbergmann/phpunit/blob/4.8/ChangeLog-4.8.md#483---2015-08-10)
