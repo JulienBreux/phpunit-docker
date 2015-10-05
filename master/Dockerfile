@@ -2,6 +2,10 @@
 FROM composer/composer
 MAINTAINER Julien Breux <julien.breux@gmail.com>
 
+# Allowed customs user & group
+ENV USER_ID 1000
+ENV GROUP_ID 1000
+
 # Run some Debian packages installation.
 ENV PACKAGES="php-pear curl"
 RUN apt-get update && \
@@ -22,7 +26,8 @@ WORKDIR /tmp
 # Run composer and phpunit installation.
 RUN composer selfupdate && \
     composer require "phpunit/phpunit:~5.0.3" --prefer-source --no-interaction && \
-    ln -s /tmp/vendor/bin/phpunit /usr/local/bin/phpunit
+    ln -s /tmp/vendor/bin/phpunit /usr/local/bin/phpunit && \
+    chown -R $USER_ID:$GROUP_ID /tmp
 
 # Set up the application directory.
 VOLUME ["/app"]
