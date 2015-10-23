@@ -43,7 +43,7 @@ namespace :version do
   end
 
   desc "Remove version"
-  task :add do
+  task :remove do
     Console::display_box('Remove version')
 
     if Version::check_version_syntax?(VERSION)
