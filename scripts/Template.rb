@@ -3,7 +3,6 @@ require_relative 'settings'
 
 module Template
   TEMPLATES_DIR = "templates/" unless defined? TEMPLATES_DIR
-  SETTINGS = Settings.read unless defined? SETTINGS
 
   class ThingsForERB
     def initialize(hash)
@@ -20,7 +19,7 @@ module Template
   def self.create_template(template, destination_directory = ".")
     file = File.new("#{TEMPLATES_DIR}/#{template}.erb").read
     input = ERB.new(file, nil, "%")
-    output = input.result(ThingsForERB.new(SETTINGS).get_binding)
+    output = input.result(ThingsForERB.new(Settings.read).get_binding)
 
     File.write("#{destination_directory}/#{template}", output)
   end
