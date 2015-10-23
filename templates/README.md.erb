@@ -1,0 +1,60 @@
+# <%= project['title'] %>
+
+[![Docker pull](https://img.shields.io/docker/pulls/phpunit/phpunit.svg)](https://hub.docker.com/r/phpunit/phpunit/) [![Docker pull](https://img.shields.io/docker/stars/phpunit/phpunit.svg)](https://hub.docker.com/r/phpunit/phpunit/) [![Github issues](https://img.shields.io/github/issues/JulienBreux/phpunit-docker.svg)](https://github.com/JulienBreux/phpunit-docker/issues) [![License](https://img.shields.io/github/license/JulienBreux/phpunit-docker.svg)](https://github.com/JulienBreux/phpunit-docker/blob/master/LICENSE)
+
+
+[Docker](https://www.docker.com) container to install and run [PHPUnit](https://phpunit.de/).
+
+## Features
+
+* [PHPUnit](https://www.phpunit.de/)
+  * Latest snapshot (master)<% versions.each do |version| %>
+  * [`<%= version %>`](https://github.com/sebastianbergmann/phpunit/blob/<%= version.split('.')[0, 2].join('.') %>/ChangeLog-<%= version.split('.')[0, 2].join('.') %>.md)<% end %>
+* [PHP](https://php.net) [5.6](https://php.net/ChangeLog-5.php)
+* [Xdebug](https://xdebug.org/) [2.3.3](https://xdebug.org/updates.php#x_2_3_3)
+
+## Installation / Usage
+
+1. Install the phpunit/phpunit container:
+
+    ``` sh
+	$ docker pull phpunit/phpunit
+	```
+
+2. Create a phpunit.xml defining your tests suites.
+
+    ``` xml
+...
+    ```
+
+3. Run PHPUnit through the PHPUnit container:
+
+    ``` sh
+	$ docker run -v $(pwd):/app phpunit/phpunit run
+    ```
+
+To run, test and develop the PHPUnit Dockerfile itself, you must use the source directly:
+
+1. Download the source:
+
+    ``` sh
+	$ git clone https://github.com/JulienBreux/phpunit-docker.git
+    ```
+
+2. Switch to the phpunit-docker directory:
+
+    ``` sh
+	$ cd phpunit-docker
+    ```
+
+3. Build the container:
+
+    ``` sh
+	$ docker build -t phpunit/phpunit .
+    ```
+
+4. Test running the container:
+
+    ``` sh
+	$ docker run phpunit/phpunit --help
+	```

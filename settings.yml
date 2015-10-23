@@ -1,0 +1,16 @@
+---
+project:
+  title: PHPUnit Docker Container
+  author:
+    name: Julien Breux
+    email: julien.breux@gmail.com
+image:
+  base: composer/composer
+versions:
+- 5.0.3
+- 4.8.5
+- 4.8.4
+- 4.8.3
+- 4.7.7
+- 4.6.10
+- 4.6.6
