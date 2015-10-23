@@ -19,4 +19,8 @@ module Version
   def self.create_version(version)
     Dir.mkdir(version) unless File.exists?(version)
   end
+
+  def self.remove_version(version)
+    FileUtils.rm_rf(version)
+  end
 end
