@@ -1,0 +1,9 @@
+build:
+	docker build --no-cache --rm -t julienbreux/phpunit master<% versions.each do |version| %>
+	docker build --no-cache --rm -t julienbreux/phpunit:<%= version %> <%= version %><% end %>
+
+version:
+	docker run -t --rm julienbreux/phpunit --version<% versions.each do |version| %>
+	docker run -t --rm julienbreux/phpunit:<%= version %> --version<% end %>
+
+.PHONY: build
