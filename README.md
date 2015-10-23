@@ -1,4 +1,4 @@
-# PHPUnit Docker Container
+# PHPUnit Docker Container.
 
 [![Docker pull](https://img.shields.io/docker/pulls/phpunit/phpunit.svg)](https://hub.docker.com/r/phpunit/phpunit/) [![Docker pull](https://img.shields.io/docker/stars/phpunit/phpunit.svg)](https://hub.docker.com/r/phpunit/phpunit/) [![Github issues](https://img.shields.io/github/issues/JulienBreux/phpunit-docker.svg)](https://github.com/JulienBreux/phpunit-docker/issues) [![License](https://img.shields.io/github/license/JulienBreux/phpunit-docker.svg)](https://github.com/JulienBreux/phpunit-docker/blob/master/LICENSE)
 
@@ -9,13 +9,13 @@
 
 * [PHPUnit](https://www.phpunit.de/)
   * Latest snapshot (master)
-  * [`5.0.3`](https://github.com/sebastianbergmann/phpunit/blob/5.0/ChangeLog-5.0.md#503---2015-10-02)
-  * [`4.8.5`](https://github.com/sebastianbergmann/phpunit/blob/4.8/ChangeLog-4.8.md#485---2015-08-19)
-  * [`4.8.4`](https://github.com/sebastianbergmann/phpunit/blob/4.8/ChangeLog-4.8.md#484---2015-08-15)
-  * [`4.8.3`](https://github.com/sebastianbergmann/phpunit/blob/4.8/ChangeLog-4.8.md#483---2015-08-10)
-  * [`4.7.7`](https://github.com/sebastianbergmann/phpunit/blob/4.7/ChangeLog-4.7.md#477---2015-07-13)
-  * [`4.6.10`](https://github.com/sebastianbergmann/phpunit/blob/4.6/ChangeLog-4.6.md#phpunit-4610)
-  * [`4.6.6`](https://github.com/sebastianbergmann/phpunit/blob/4.6/ChangeLog-4.6.md#phpunit-466)
+  * [`5.0.3`](https://github.com/sebastianbergmann/phpunit/blob/5.0/ChangeLog-5.0.md)
+  * [`4.8.5`](https://github.com/sebastianbergmann/phpunit/blob/4.8/ChangeLog-4.8.md)
+  * [`4.8.4`](https://github.com/sebastianbergmann/phpunit/blob/4.8/ChangeLog-4.8.md)
+  * [`4.8.3`](https://github.com/sebastianbergmann/phpunit/blob/4.8/ChangeLog-4.8.md)
+  * [`4.7.7`](https://github.com/sebastianbergmann/phpunit/blob/4.7/ChangeLog-4.7.md)
+  * [`4.6.10`](https://github.com/sebastianbergmann/phpunit/blob/4.6/ChangeLog-4.6.md)
+  * [`4.6.6`](https://github.com/sebastianbergmann/phpunit/blob/4.6/ChangeLog-4.6.md)
 * [PHP](https://php.net) [5.6](https://php.net/ChangeLog-5.php)
 * [Xdebug](https://xdebug.org/) [2.3.3](https://xdebug.org/updates.php#x_2_3_3)
 
