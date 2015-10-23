@@ -21,7 +21,7 @@ namespace :version do
         Settings::add_version(VERSION)
         Console::display_done("Update settings")
 
-        Template::create_template('Dockerfile', VERSION)
+        Template::create_template('Dockerfile', VERSION, {"version": VERSION})
         Console::display_done("Add new version")
 
         Template::create_template('Dockerfile', 'master')
