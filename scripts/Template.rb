@@ -16,10 +16,16 @@ module Template
     end
   end
 
-  def self.create_template(template, destination_directory = ".")
+  def self.create_template(template, destination_directory = ".", variables = {})
+
+    variables.keys.each do |key|
+      variables[(key.to_s rescue key) || key] = variables.delete(key)
+    end
+
+    vars = (Settings.read).merge(variables)
     file = File.new("#{TEMPLATES_DIR}/#{template}.erb").read
     input = ERB.new(file, nil, "%")
-    output = input.result(ThingsForERB.new(Settings.read).get_binding)
+    output = input.result(ThingsForERB.new(vars).get_binding)
 
     File.write("#{destination_directory}/#{template}", output)
   end
