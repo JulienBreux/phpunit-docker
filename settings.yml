@@ -1,6 +1,9 @@
 ---
 project:
-  title: PHPUnit Docker Container.
+  name: PHPUnit
+  code_name: phpunit
+  website: https://www.phpunit.de/
+  repository: https://github.com/JulienBreux/phpunit-docker.git
   author:
     name: Julien Breux
     email: julien.breux@gmail.com

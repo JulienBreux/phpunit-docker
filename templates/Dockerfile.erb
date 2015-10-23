@@ -1,4 +1,4 @@
-# <%= project['title'] %>
+# <%= project['name'] %> Docker Container.
 FROM <%= image['base'] %>
 MAINTAINER <%= project['author']['name'] %> <<%= project['author']['email'] %>>
 
@@ -20,15 +20,15 @@ RUN curl -L http://pecl.php.net/get/xdebug-2.3.3.tgz >> /usr/src/php/ext/xdebug.
 # Goto temporary directory.
 WORKDIR /tmp
 
-# Run composer and phpunit installation.
+# Run composer and <%= project['code_name'] %> installation.
 RUN composer selfupdate && \
-    composer require "phpunit/phpunit:~<%= (version ? version : versions.first) %>" --prefer-source --no-interaction && \
-    ln -s /tmp/vendor/bin/phpunit /usr/local/bin/phpunit
+    composer require "<%= project['code_name'] %>/<%= project['code_name'] %>:~<%= (version ? version : versions.first) %>" --prefer-source --no-interaction && \
+    ln -s /tmp/vendor/bin/<%= project['code_name'] %> /usr/local/bin/<%= project['code_name'] %>
 
 # Set up the application directory.
 VOLUME ["/app"]
 WORKDIR /app
 
 # Set up the command arguments.
-ENTRYPOINT ["/usr/local/bin/phpunit"]
+ENTRYPOINT ["/usr/local/bin/<%= project['code_name'] %>"]
 CMD ["--help"]
