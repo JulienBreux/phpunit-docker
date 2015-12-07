@@ -1,5 +1,5 @@
 # PHPUnit Docker Container.
-FROM composer/composer:php7
+FROM composer/composer
 MAINTAINER Julien Breux <julien.breux@gmail.com>
 
 # Run some Debian packages installation.
@@ -10,10 +10,10 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Run xdebug installation.
-RUN curl -L http://pecl.php.net/get/xdebug-2.4.0RC2.tgz >> /usr/src/php/ext/xdebug.tgz && \
+RUN curl -L http://pecl.php.net/get/xdebug-2.3.3.tgz >> /usr/src/php/ext/xdebug.tgz && \
     tar -xf /usr/src/php/ext/xdebug.tgz -C /usr/src/php/ext/ && \
     rm /usr/src/php/ext/xdebug.tgz && \
-    docker-php-ext-install xdebug-2.4.0RC2 && \
+    docker-php-ext-install xdebug-2.3.3 && \
     docker-php-ext-install pcntl && \
     php -m
 
@@ -22,7 +22,7 @@ WORKDIR /tmp
 
 # Run composer and phpunit installation.
 RUN composer selfupdate && \
-    composer require "phpunit/phpunit:~5.1.0" --prefer-source --no-interaction && \
+    composer require "phpunit/phpunit:~5.0.10" --prefer-source --no-interaction && \
     ln -s /tmp/vendor/bin/phpunit /usr/local/bin/phpunit
 
 # Set up the application directory.
