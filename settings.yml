@@ -9,7 +9,12 @@ project:
     email: julien.breux@gmail.com
 image:
   base: composer/composer:php7
+xdebug:
+  version: 2.4.0RC2
 versions:
+- 5.1.0
+- 5.0.10
+- 5.0.9
 - 5.0.8
 - 5.0.7
 - 5.0.6
