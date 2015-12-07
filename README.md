@@ -25,7 +25,7 @@
   * [`4.7.7`](https://github.com/sebastianbergmann/phpunit/blob/4.7/ChangeLog-4.7.md)
   * [`4.6.10`](https://github.com/sebastianbergmann/phpunit/blob/4.6/ChangeLog-4.6.md)
   * [`4.6.6`](https://github.com/sebastianbergmann/phpunit/blob/4.6/ChangeLog-4.6.md)
-* [PHP](https://php.net) [5.6](https://php.net/ChangeLog-5.php)
+* [PHP](https://php.net) [7.0](https://php.net/ChangeLog-7.php)
 * [Xdebug](https://xdebug.org/) [2.3.3](https://xdebug.org/updates.php#x_2_3_3)
 
 ## Installation / Usage

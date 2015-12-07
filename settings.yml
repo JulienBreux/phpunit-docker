@@ -8,7 +8,7 @@ project:
     name: Julien Breux
     email: julien.breux@gmail.com
 image:
-  base: composer/composer
+  base: composer/composer:php7
 versions:
 - 5.0.8
 - 5.0.7
