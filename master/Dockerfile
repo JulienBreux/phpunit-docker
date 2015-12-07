@@ -1,5 +1,5 @@
 # PHPUnit Docker Container.
-FROM composer/composer
+FROM composer/composer:php7
 MAINTAINER Julien Breux <julien.breux@gmail.com>
 
 # Run some Debian packages installation.
