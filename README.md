@@ -50,6 +50,18 @@
     ``` sh
 	$ docker run -v $(pwd):/app phpunit/phpunit run
     ```
+    or in shorthand add
+    ``` sh
+	$ sudo sh -c "printf \"#!/bin/sh
+    export PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin
+    docker run -v $(pwd):/app phpunit/phpunit run \\\$@
+    \" > /usr/local/bin/phpunit"
+	$ sudo chmod +x /usr/local/bin/phpunit
+    ```
+    and then from host machine just
+    ``` sh
+	$ phpunit --version
+    ```
 
 To run, test and develop the PHPUnit Dockerfile itself, you must use the source directly:
 
