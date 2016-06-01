@@ -10,7 +10,7 @@ project:
 image:
   base: composer/composer:php7
 xdebug:
-  version: 2.4.0RC2
+  version: 2.4.0
 versions:
 - 5.1.0
 - 5.0.10
