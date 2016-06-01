@@ -10,8 +10,8 @@
 * [<%= project['name'] %>](<%= project['website'] %>)
   * Latest snapshot (master)<% versions.each do |version| %>
   * [`<%= version %>`](https://github.com/sebastianbergmann/phpunit/blob/<%= version.split('.')[0, 2].join('.') %>/ChangeLog-<%= version.split('.')[0, 2].join('.') %>.md)<% end %>
-* [PHP](https://php.net) [5.6](https://php.net/ChangeLog-5.php)
-* [Xdebug](https://xdebug.org/) [2.3.3](https://xdebug.org/updates.php#x_2_3_3)
+* [PHP](https://php.net) [<%= php['version'] %>](https://php.net/ChangeLog-<%= php['version'].split('.')[0, 1] %>.php)
+* [Xdebug](https://xdebug.org/) [<%= xdebug['version'] %>](https://xdebug.org/updates.php#x_<%= xdebug['version'].split('.')[0, 3].join('_') %>)
 
 ## Installation / Usage
 
@@ -31,6 +31,18 @@
 
     ``` sh
 	$ docker run -v $(pwd):/app <%= project['code_name'] %>/<%= project['code_name'] %> run
+    ```
+    or in shorthand add
+    ``` sh
+	$ sudo sh -c "printf \"#!/bin/sh
+    export PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin
+    docker run -v $(pwd):/app <%= project['code_name'] %>/<%= project['code_name'] %> run \\\$@
+    \" > /usr/local/bin/<%= project['code_name'] %>"
+	$ sudo chmod +x /usr/local/bin/<%= project['code_name'] %>
+    ```
+    and then from host machine just
+    ``` sh
+	$ <%= project['code_name'] %> --version
     ```
 
 To run, test and develop the <%= project['name'] %> Dockerfile itself, you must use the source directly:
