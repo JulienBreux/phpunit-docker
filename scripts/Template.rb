@@ -14,6 +14,7 @@ module Template
   #
   # Returns nothings.
   def self.create_template(name, dest_dir = '.', variables = {})
+    variables = (Settings.read).merge(variables)
     content = Liquid::Template.parse(read_template(name))
     content.render(variables)
     write_template(dest_dir, name, content.render(variables))
