@@ -1,32 +1,42 @@
-require 'erb'
+require 'liquid'
 require_relative 'settings'
 
+# Template manager
 module Template
-  TEMPLATES_DIR = "templates/" unless defined? TEMPLATES_DIR
+  TEMPLATES_DIR = 'templates/'.freeze unless defined? TEMPLATES_DIR
+  DEST_DIR = '.'.freeze unless defined? DEST_DIR
 
-  class ThingsForERB
-    def initialize(hash)
-      @hash = hash.dup
-    end
-    def method_missing(meth, *args, &block)
-      @hash[meth.to_s]
-    end
-    def get_binding
-      binding
-    end
+  # Create template with vars
+  #
+  # name      - Template name.
+  # dest_dir  - Destination directory.
+  # variables - Variables.
+  #
+  # Returns nothings.
+  def self.create_template(name, dest_dir = '.', variables = {})
+    variables = (Settings.read).merge(variables)
+    content = Liquid::Template.parse(read_template(name))
+    content.render(variables)
+    write_template(dest_dir, name, content.render(variables))
   end
 
-  def self.create_template(template, destination_directory = ".", variables = {})
+  # Read template.
+  #
+  # name - Template name.
+  #
+  # Returns nothings.
+  def self.read_template(name)
+    File.read("#{TEMPLATES_DIR}#{name}.liquid")
+  end
 
-    variables.keys.each do |key|
-      variables[(key.to_s rescue key) || key] = variables.delete(key)
-    end
-
-    vars = (Settings.read).merge(variables)
-    file = File.new("#{TEMPLATES_DIR}/#{template}.erb").read
-    input = ERB.new(file, nil, "%")
-    output = input.result(ThingsForERB.new(vars).get_binding)
-
-    File.write("#{destination_directory}/#{template}", output)
+  # Write template.
+  #
+  # dest_dir - Destination directory.
+  # name     - Template name.
+  # content  - Template output content (without vars).
+  #
+  # Returns nothings.
+  def self.write_template(dest_dir = '.', name, content)
+    File.write("#{dest_dir}/#{name}", content)
   end
 end

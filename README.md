@@ -3,7 +3,7 @@
 [![Docker pull](https://img.shields.io/docker/pulls/phpunit/phpunit.svg)](https://hub.docker.com/r/phpunit/phpunit/) [![Docker pull](https://img.shields.io/docker/stars/phpunit/phpunit.svg)](https://hub.docker.com/r/phpunit/phpunit/) [![Github issues](https://img.shields.io/github/issues/JulienBreux/phpunit-docker.svg)](https://github.com/JulienBreux/phpunit-docker/issues) [![License](https://img.shields.io/github/license/JulienBreux/phpunit-docker.svg)](https://github.com/JulienBreux/phpunit-docker/blob/master/LICENSE)
 
 
-[Docker](https://www.docker.com) container to install and run [PHPUnit](https://phpunit.de/).
+[Docker](https://www.docker.com) container to install and run [PHPUnit](https://www.phpunit.de/).
 
 ## Features
 
@@ -89,3 +89,26 @@ To run, test and develop the PHPUnit Dockerfile itself, you must use the source 
     ``` sh
 	$ docker run phpunit/phpunit --help
 	```
+
+## How to generate?
+
+### Install associate GEMs
+
+``` sh
+$ gem install bundle
+$ bundle
+```
+
+### Generate a new version
+
+``` sh
+version=5.3.1 rake version:add
+```
+
+### Remove a version
+
+An error in your generation?
+
+``` sh
+version=5.3.1 rake version:remove
+```

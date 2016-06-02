@@ -1,0 +1,9 @@
+build:
+	docker build --no-cache --rm -t julienbreux/{{ project.code_name }} master{% for version in versions %}
+	docker build --no-cache --rm -t julienbreux/{{ project.code_name }}:{{ version }} {{ version }}{% endfor %}
+
+version:
+	docker run -t --rm julienbreux/{{ project.code_name }} --version{% for version in versions %}
+	docker run -t --rm julienbreux/{{ project.code_name }}:{{ version }} --version{% endfor %}
+
+.PHONY: build

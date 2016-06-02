@@ -1,9 +1,0 @@
-build:
-	docker build --no-cache --rm -t julienbreux/<%= project['code_name'] %> master<% versions.each do |version| %>
-	docker build --no-cache --rm -t julienbreux/<%= project['code_name'] %>:<%= version %> <%= version %><% end %>
-
-version:
-	docker run -t --rm julienbreux/<%= project['code_name'] %> --version<% versions.each do |version| %>
-	docker run -t --rm julienbreux/<%= project['code_name'] %>:<%= version %> --version<% end %>
-
-.PHONY: build
