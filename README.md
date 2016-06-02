@@ -89,3 +89,26 @@ To run, test and develop the PHPUnit Dockerfile itself, you must use the source 
     ``` sh
 	$ docker run phpunit/phpunit --help
 	```
+
+## How to generate?
+
+### Install associate GEMs
+
+``` sh
+$ gem install bundle
+$ bundle
+```
+
+### Generate a new version
+
+``` sh
+version=5.3.1 rake version:add
+```
+
+### Remove a version
+
+An error in your generation?
+
+``` sh
+version=5.3.1 rake version:remove
+```
