@@ -9,7 +9,7 @@
 
 * [{{ project.name }}]({{ project.website }})
   * Latest snapshot (master){% for version in versions %}
-  * [`{{ version }}`](https://github.com/sebastianbergmann/phpunit/blob/{{ version | split: "." | slice: 0, 2 | split: "." | join: "." }}/ChangeLog-{{ version | split: "." | slice: 0, 2 | join: "." }}.md){% endfor %}
+  * [`{{ version }}`](https://github.com/sebastianbergmann/phpunit/blob/{{ version | split: "." | slice: 0, 2 | join: "." }}/ChangeLog-{{ version | split: "." | slice: 0, 2 | join: "." }}.md){% endfor %}
 * [PHP](https://php.net) [{{ php.version }}](https://php.net/ChangeLog-{{ php.version | split: "." | slice: 0, 1 | join: "." }}.php)
 * [Xdebug](https://xdebug.org/) [{{ xdebug.version }}](https://xdebug.org/updates.php#x_{{ xdebug.version | split: "." | slice: 0, 3 | join: "_" }})
 
