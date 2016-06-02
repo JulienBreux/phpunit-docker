@@ -16,7 +16,7 @@ module Template
   def self.create_template(name, dest_dir = '.', variables = {})
     content = Liquid::Template.parse(read_template(name))
     content.render(variables)
-    # write_template(dest_dir, name, content.render(variables))
+    write_template(dest_dir, name, content.render(variables))
   end
 
   # Read template.
