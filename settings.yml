@@ -11,6 +11,8 @@ image:
   base: composer/composer:php7
 xdebug:
   version: 2.4.0
+php:
+  version: 7.0
 versions:
 - 5.3.0
 - 5.1.0
