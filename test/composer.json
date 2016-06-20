@@ -1,0 +1,15 @@
+{
+    "name": "phpunit-docker/test",
+    "description": "Only used to test Docker image",
+    "type": "app",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Julien Breux",
+            "email": "julien.breux@gmail.com"
+        }
+    ],
+    "require": {
+      "phpunit/phpunit": "^5.4"
+    }
+}

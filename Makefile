@@ -72,4 +72,8 @@ debug:
 	docker build --no-cache --rm -t julienbreux/phpunit master
 	docker run -it --rm --entrypoint=/bin/bash julienbreux/phpunit
 
+phpunit-test:
+	cd test/ && docker run -v $(shell pwd)/test:/app --rm --entrypoint=/usr/bin/composer julienbreux/phpunit install
+	docker run -v $(shell pwd):/app phpunit/phpunit --rm --configuration='test/phpunit.xml'
+
 .PHONY: build

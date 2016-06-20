@@ -29,13 +29,13 @@
 3. Run {{ project.name }} through the {{ project.name }} container:
 
     ``` sh
-	$ docker run -v $(pwd):/app {{ project.code_name }}/{{ project.code_name }} run
+	$ docker run -v $(pwd):/app --rm {{ project.code_name }}/{{ project.code_name }} run
     ```
     or in shorthand add
     ``` sh
 	$ sudo sh -c "printf \"#!/bin/sh
     export PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin
-    docker run -v $(pwd):/app {{ project.code_name }}/{{ project.code_name }} run \\\$@
+    docker run -v $(pwd):/app --rm {{ project.code_name }}/{{ project.code_name }} run \\\$@
     \" > /usr/local/bin/{{ project.code_name }}"
 	$ sudo chmod +x /usr/local/bin/{{ project.code_name }}
     ```
@@ -82,7 +82,7 @@ $ bundle
 ### Generate a new version
 
 ``` sh
-version=5.3.1 rake version:add
+version={{ versions.first }} rake version:add
 ```
 
 ### Remove a version
@@ -90,5 +90,5 @@ version=5.3.1 rake version:add
 An error in your generation?
 
 ``` sh
-version=5.3.1 rake version:remove
+version={{ versions.first }} rake version:remove
 ```
