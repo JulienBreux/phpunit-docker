@@ -9,6 +9,11 @@
 
 * [PHPUnit](https://www.phpunit.de/)
   * Latest snapshot (master)
+  * [`5.4.7`](https://github.com/sebastianbergmann/phpunit/blob/5.4/ChangeLog-5.4.md)
+  * [`5.4.6`](https://github.com/sebastianbergmann/phpunit/blob/5.4/ChangeLog-5.4.md)
+  * [`5.4.5`](https://github.com/sebastianbergmann/phpunit/blob/5.4/ChangeLog-5.4.md)
+  * [`5.4.4`](https://github.com/sebastianbergmann/phpunit/blob/5.4/ChangeLog-5.4.md)
+  * [`5.4.3`](https://github.com/sebastianbergmann/phpunit/blob/5.4/ChangeLog-5.4.md)
   * [`5.4.2`](https://github.com/sebastianbergmann/phpunit/blob/5.4/ChangeLog-5.4.md)
   * [`5.4.1`](https://github.com/sebastianbergmann/phpunit/blob/5.4/ChangeLog-5.4.md)
   * [`5.4.0`](https://github.com/sebastianbergmann/phpunit/blob/5.4/ChangeLog-5.4.md)
