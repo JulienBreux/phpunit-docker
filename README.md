@@ -60,13 +60,13 @@
 3. Run PHPUnit through the PHPUnit container:
 
     ``` sh
-	$ docker run -v $(pwd):/app phpunit/phpunit run
+	$ docker run -v $(pwd):/app --rm phpunit/phpunit run
     ```
     or in shorthand add
     ``` sh
 	$ sudo sh -c "printf \"#!/bin/sh
     export PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin
-    docker run -v $(pwd):/app phpunit/phpunit run \\\$@
+    docker run -v $(pwd):/app --rm phpunit/phpunit run \\\$@
     \" > /usr/local/bin/phpunit"
 	$ sudo chmod +x /usr/local/bin/phpunit
     ```
@@ -113,7 +113,7 @@ $ bundle
 ### Generate a new version
 
 ``` sh
-version=5.3.1 rake version:add
+version=5.4.7 rake version:add
 ```
 
 ### Remove a version
@@ -121,5 +121,5 @@ version=5.3.1 rake version:add
 An error in your generation?
 
 ``` sh
-version=5.3.1 rake version:remove
+version=5.4.7 rake version:remove
 ```
