@@ -1,34 +1,49 @@
 # PHPUnit Docker Container.
-FROM composer/composer:php7
+FROM alpine:edge
 MAINTAINER Julien Breux <julien.breux@gmail.com>
 
-# Run some Debian packages installation.
-ENV PACKAGES="php-pear curl"
-RUN apt-get update && \
-    apt-get install -yq --no-install-recommends $PACKAGES && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing add \
+        bash \
+        ca-certificates \
+        git \
+        curl \
+        unzip \
+        php7 \
+        php7-xml \
+        php7-zip \
+        php7-xmlreader \
+        php7-zlib \
+        php7-opcache \
+        php7-mcrypt \
+        php7-openssl \
+        php7-curl \
+        php7-json \
+        php7-dom \
+        php7-phar \
+        php7-mbstring \
+        php7-bcmath \
+        php7-pdo \
+        php7-pdo_pgsql \
+        php7-pdo_sqlite \
+        php7-pdo_mysql \
+        php7-soap \
+        php7-xdebug \
+        php7-pcntl
 
-# Run xdebug installation.
-RUN curl -L http://pecl.php.net/get/xdebug-2.4.0.tgz >> /usr/src/php/ext/xdebug.tgz && \
-    tar -xf /usr/src/php/ext/xdebug.tgz -C /usr/src/php/ext/ && \
-    rm /usr/src/php/ext/xdebug.tgz && \
-    docker-php-ext-install xdebug-2.4.0 && \
-    docker-php-ext-install pcntl && \
-    php -m
+RUN ln -s /usr/bin/php7 /usr/bin/php
 
-# Goto temporary directory.
 WORKDIR /tmp
 
-# Run composer and phpunit installation.
-RUN composer selfupdate && \
-    composer require "phpunit/phpunit:~5.4.2" --prefer-source --no-interaction && \
-    ln -s /tmp/vendor/bin/phpunit /usr/local/bin/phpunit
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
+    && php composer-setup.php --install-dir=/usr/bin --filename=composer \
+    && php -r "unlink('composer-setup.php');" \
+    && composer require "phpunit/phpunit:~5.4.2" --prefer-source --no-interaction \
+    && composer require "phpunit/php-invoker" --prefer-source --no-interaction \
+    && ln -s /tmp/vendor/bin/phpunit /usr/local/bin/phpunit \
+    && sed -i 's/nn and/nn, Julien Breux (Docker) and/g' /tmp/vendor/phpunit/phpunit/src/Runner/Version.php
 
-# Set up the application directory.
 VOLUME ["/app"]
 WORKDIR /app
 
-# Set up the command arguments.
 ENTRYPOINT ["/usr/local/bin/phpunit"]
 CMD ["--help"]

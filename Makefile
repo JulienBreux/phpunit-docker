@@ -58,4 +58,8 @@ version:
 	docker run -t --rm julienbreux/phpunit:4.6.10 --version
 	docker run -t --rm julienbreux/phpunit:4.6.6 --version
 
+debug:
+	docker build --no-cache --rm -t julienbreux/phpunit master
+	docker run -it --rm --entrypoint=/bin/bash julienbreux/phpunit
+
 .PHONY: build
