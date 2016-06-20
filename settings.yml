@@ -9,6 +9,8 @@ project:
     email: julien.breux@gmail.com
 image:
   base: alpine:edge
+php:
+  version: 7.0
 versions:
 - 5.4.7
 - 5.4.6
