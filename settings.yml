@@ -8,11 +8,7 @@ project:
     name: Julien Breux
     email: julien.breux@gmail.com
 image:
-  base: composer/composer:php7
-xdebug:
-  version: 2.4.0
-php:
-  version: 7.0
+  base: alpine:edge
 versions:
 - 5.4.2
 - 5.4.1

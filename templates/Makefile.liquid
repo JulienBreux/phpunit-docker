@@ -6,4 +6,8 @@ version:
 	docker run -t --rm julienbreux/{{ project.code_name }} --version{% for version in versions %}
 	docker run -t --rm julienbreux/{{ project.code_name }}:{{ version }} --version{% endfor %}
 
+debug:
+	docker build --no-cache --rm -t julienbreux/phpunit master
+	docker run -it --rm --entrypoint=/bin/bash julienbreux/phpunit
+
 .PHONY: build
