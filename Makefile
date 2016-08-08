@@ -1,5 +1,6 @@
 build:
 	docker build --no-cache --rm -t julienbreux/phpunit master
+	docker build --no-cache --rm -t julienbreux/phpunit:5.5.0 5.5.0
 	docker build --no-cache --rm -t julienbreux/phpunit:5.4.7 5.4.7
 	docker build --no-cache --rm -t julienbreux/phpunit:5.4.6 5.4.6
 	docker build --no-cache --rm -t julienbreux/phpunit:5.4.5 5.4.5
@@ -35,6 +36,7 @@ build:
 
 version:
 	docker run -t --rm julienbreux/phpunit --version
+	docker run -t --rm julienbreux/phpunit:5.5.0 --version
 	docker run -t --rm julienbreux/phpunit:5.4.7 --version
 	docker run -t --rm julienbreux/phpunit:5.4.6 --version
 	docker run -t --rm julienbreux/phpunit:5.4.5 --version
