@@ -2,6 +2,10 @@
 FROM alpine:edge
 MAINTAINER Julien Breux <julien.breux@gmail.com>
 
+ENV PEAR_PACKAGES foo
+
+WORKDIR /tmp
+
 RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing add \
         bash \
         ca-certificates \
@@ -28,19 +32,20 @@ RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testin
         php7-pdo_mysql \
         php7-soap \
         php7-xdebug \
-        php7-pcntl
-
-RUN ln -s /usr/bin/php7 /usr/bin/php
-
-WORKDIR /tmp
-
-RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
+        php7-pcntl \
+    && ln -s /usr/bin/php7 /usr/bin/php \
+    && php -r "copy('https://pear.php.net/go-pear.phar', 'go-pear.phar');" \
+    && php go-pear.phar \
+    && php -r "unlink('go-pear.phar');" \
+    && php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
     && php composer-setup.php --install-dir=/usr/bin --filename=composer \
     && php -r "unlink('composer-setup.php');" \
     && composer require "phpunit/phpunit:~5.5.0" --prefer-source --no-interaction \
     && composer require "phpunit/php-invoker" --prefer-source --no-interaction \
     && ln -s /tmp/vendor/bin/phpunit /usr/local/bin/phpunit \
     && sed -i 's/nn and/nn, Julien Breux (Docker) and/g' /tmp/vendor/phpunit/phpunit/src/Runner/Version.php
+
+ONBUILD RUN /usr/bin/pear install $PEAR_PACKAGES
 
 VOLUME ["/app"]
 WORKDIR /app
