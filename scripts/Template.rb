@@ -1,5 +1,5 @@
 require 'liquid'
-require_relative 'settings'
+require_relative 'Settings'
 
 # Template manager
 module Template
