@@ -13,6 +13,7 @@ RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testin
         curl \
         unzip \
         php7 \
+        php7-ctype \
         php7-xml \
         php7-zip \
         php7-xmlreader \
@@ -45,7 +46,11 @@ RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testin
     && composer require "{{ project.code_name }}/{{ project.code_name }}:~{{ versions.first }}" --prefer-source --no-interaction \
     && composer require "phpunit/php-invoker" --prefer-source --no-interaction \
     && ln -s /tmp/vendor/bin/{{ project.code_name }} /usr/local/bin/{{ project.code_name }} \
-    && sed -i 's/nn and/nn, {{ project.author.name }} (Docker) and/g' /tmp/vendor/phpunit/phpunit/src/Runner/Version.php
+    && sed -i 's/nn and/nn, {{ project.author.name }} (Docker) and/g' /tmp/vendor/phpunit/phpunit/src/Runner/Version.php \
+
+    # Enable X-Debug
+    && sed -i 's/\;z/z/g' /etc/php7/conf.d/xdebug.ini \
+    && php -m | grep -i xdebug
 
 ONBUILD RUN pear install $PEAR_PACKAGES
 

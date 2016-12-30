@@ -12,6 +12,8 @@ debug:
 
 phpunit-test:
 	cd test/ && docker run -v $(shell pwd)/test:/app --rm --entrypoint=/usr/bin/composer julienbreux/phpunit install
-	docker run -v $(shell pwd):/app phpunit/phpunit --rm --configuration='test/phpunit.xml'
+	docker run --rm --entrypoint=/usr/bin/php julienbreux/phpunit -v
+	docker run --rm --entrypoint=/usr/local/bin/phpunit julienbreux/phpunit --version
+	docker run -v $(shell pwd):/app  --rm julienbreux/phpunit --configuration='test/phpunit.xml' --coverage-text='test/coverage.txt'
 
 .PHONY: build
