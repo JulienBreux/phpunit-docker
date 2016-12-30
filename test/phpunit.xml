@@ -24,8 +24,13 @@
   timeoutForLargeTests="60"
   verbose="false">
   <testsuites>
-  <testsuite name="Fake">
-    <file>CatTest.php</file>
-  </testsuite>
+    <testsuite name="Fake">
+      <file>CatTest.php</file>
+    </testsuite>
   </testsuites>
+  <filter>
+      <whitelist>
+          <file>CatTest.php</file>
+      </whitelist>
+  </filter>
 </phpunit>
