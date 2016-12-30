@@ -1,6 +1,6 @@
-# {{ project.name }} Docker Container.
-FROM {{ image.base }}
-MAINTAINER {{ project.author.name }} <{{ project.author.email }}>
+# PHPUnit Docker Container.
+FROM alpine:edge
+MAINTAINER Julien Breux <julien.breux@gmail.com>
 
 ENV PEAR_PACKAGES foo
 
@@ -42,10 +42,10 @@ RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testin
     && php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
     && php composer-setup.php --install-dir=/usr/bin --filename=composer \
     && php -r "unlink('composer-setup.php');" \
-    && composer require "{{ project.code_name }}/{{ project.code_name }}:~{{ versions.first }}" --prefer-source --no-interaction \
+    && composer require "phpunit/phpunit:~5.7.5" --prefer-source --no-interaction \
     && composer require "phpunit/php-invoker" --prefer-source --no-interaction \
-    && ln -s /tmp/vendor/bin/{{ project.code_name }} /usr/local/bin/{{ project.code_name }} \
-    && sed -i 's/nn and/nn, {{ project.author.name }} (Docker) and/g' /tmp/vendor/phpunit/phpunit/src/Runner/Version.php \
+    && ln -s /tmp/vendor/bin/phpunit /usr/local/bin/phpunit \
+    && sed -i 's/nn and/nn, Julien Breux (Docker) and/g' /tmp/vendor/phpunit/phpunit/src/Runner/Version.php \
 
     # Enable X-Debug
     && sed -i 's/\;z/z/g' /etc/php7/conf.d/xdebug.ini \
@@ -56,5 +56,5 @@ ONBUILD RUN pear install $PEAR_PACKAGES
 VOLUME ["/app"]
 WORKDIR /app
 
-ENTRYPOINT ["/usr/local/bin/{{ project.code_name }}"]
+ENTRYPOINT ["/usr/local/bin/phpunit"]
 CMD ["--help"]
