@@ -10,6 +10,7 @@
 * [PHPUnit](https://www.phpunit.de/)
   * Latest snapshot (master)
   * [`5.7.5`](https://github.com/sebastianbergmann/phpunit/blob/5.7/ChangeLog-5.7.md)
+  * [`5.7.0`](https://github.com/sebastianbergmann/phpunit/blob/5.7/ChangeLog-5.7.md)
   * [`5.5.0`](https://github.com/sebastianbergmann/phpunit/blob/5.5/ChangeLog-5.5.md)
   * [`5.4.7`](https://github.com/sebastianbergmann/phpunit/blob/5.4/ChangeLog-5.4.md)
   * [`5.4.6`](https://github.com/sebastianbergmann/phpunit/blob/5.4/ChangeLog-5.4.md)
