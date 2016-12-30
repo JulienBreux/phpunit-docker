@@ -13,7 +13,6 @@ RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testin
         curl \
         unzip \
         php7 \
-        php7-ctype \
         php7-xml \
         php7-zip \
         php7-xmlreader \
