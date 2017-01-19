@@ -51,7 +51,7 @@ RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testin
     && sed -i 's/\;z/z/g' /etc/php7/conf.d/xdebug.ini \
     && php -m | grep -i xdebug
 
-ONBUILD RUN pear install $PEAR_PACKAGES
+ONBUILD RUN [ $PEAR_PACKAGES != "foo" ] && pear install $PEAR_PACKAGES
 
 VOLUME ["/app"]
 WORKDIR /app
