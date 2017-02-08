@@ -9,6 +9,8 @@
 
 * [PHPUnit](https://www.phpunit.de/)
   * Latest snapshot (master)
+  * [`6.0.6`](https://github.com/sebastianbergmann/phpunit/blob/6.0/ChangeLog-6.0.md)
+  * [`5.7.12`](https://github.com/sebastianbergmann/phpunit/blob/5.7/ChangeLog-5.7.md)
   * [`5.7.5`](https://github.com/sebastianbergmann/phpunit/blob/5.7/ChangeLog-5.7.md)
   * [`5.7.0`](https://github.com/sebastianbergmann/phpunit/blob/5.7/ChangeLog-5.7.md)
   * [`5.5.0`](https://github.com/sebastianbergmann/phpunit/blob/5.5/ChangeLog-5.5.md)
@@ -116,7 +118,7 @@ $ bundle
 ### Generate a new version
 
 ``` sh
-version=5.7.5 rake version:add
+version=6.0.6 rake version:add
 ```
 
 ### Remove a version
@@ -124,5 +126,5 @@ version=5.7.5 rake version:add
 An error in your generation?
 
 ``` sh
-version=5.7.5 rake version:remove
+version=6.0.6 rake version:remove
 ```
