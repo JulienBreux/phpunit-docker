@@ -10,11 +10,12 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Run xdebug installation.
-RUN curl -L http://pecl.php.net/get/xdebug-2.3.3.tgz >> /usr/src/php/ext/xdebug.tgz && \
+RUN curl -L http://pecl.php.net/get/xdebug-2.5.0.tgz >> /usr/src/php/ext/xdebug.tgz && \
     tar -xf /usr/src/php/ext/xdebug.tgz -C /usr/src/php/ext/ && \
     rm /usr/src/php/ext/xdebug.tgz && \
     docker-php-ext-install xdebug-2.3.3 && \
     docker-php-ext-install pcntl && \
+    docker-php-ext-install exif && \
     php -m
 
 # Goto temporary directory.
