@@ -16,6 +16,7 @@ RUN curl -L http://pecl.php.net/get/xdebug-2.4.0.tgz >> /usr/src/php/ext/xdebug.
     docker-php-ext-install xdebug-2.4.0 && \
     docker-php-ext-install pcntl && \
     docker-php-ext-install ctype && \
+    docker-php-ext-install exif && \
     php -m
 
 # Goto temporary directory.
