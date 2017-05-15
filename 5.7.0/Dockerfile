@@ -6,7 +6,7 @@ ENV PEAR_PACKAGES foo
 
 WORKDIR /tmp
 
-RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing add \
+RUN apk --no-cache add \
         bash \
         ca-certificates \
         git \
