@@ -1,5 +1,5 @@
 # PHPUnit Docker Container.
-FROM alpine:edge
+FROM alpine:latest
 MAINTAINER Julien Breux <julien.breux@gmail.com>
 
 ENV PEAR_PACKAGES foo
