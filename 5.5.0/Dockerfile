@@ -1,8 +1,8 @@
 # PHPUnit Docker Container.
-FROM alpine:edge
+FROM alpine:latest
 MAINTAINER Julien Breux <julien.breux@gmail.com>
 
-RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing add \
+RUN apk --no-cache add \
         bash \
         ca-certificates \
         git \
