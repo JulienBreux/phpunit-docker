@@ -36,7 +36,7 @@ RUN apk --no-cache add \
         php7-pcntl \
         php7-ctype \
         php7-session \
-    && ln -s /usr/bin/php7 /usr/bin/php \
+        php7-tokenizer \
     && php -r "copy('https://pear.php.net/go-pear.phar', 'go-pear.phar');" \
     && php go-pear.phar \
     && php -r "unlink('go-pear.phar');" \
@@ -52,7 +52,7 @@ RUN apk --no-cache add \
     && sed -i 's/\;z/z/g' /etc/php7/conf.d/xdebug.ini \
     && php -m | grep -i xdebug
 
-ONBUILD RUN [ $PEAR_PACKAGES != "foo" ] && pear install $PEAR_PACKAGES
+ONBUILD RUN [ $PEAR_PACKAGES != "foo" ] || exit 0  && pear install $PEAR_PACKAGES
 
 VOLUME ["/app"]
 WORKDIR /app

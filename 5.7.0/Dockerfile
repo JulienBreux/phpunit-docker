@@ -36,7 +36,7 @@ RUN apk --no-cache add \
         php7-pcntl \
         php7-ctype \
         php7-session \
-    && ln -s /usr/bin/php7 /usr/bin/php \
+        php7-tokenizer \
     && php -r "copy('https://pear.php.net/go-pear.phar', 'go-pear.phar');" \
     && php go-pear.phar \
     && php -r "unlink('go-pear.phar');" \
