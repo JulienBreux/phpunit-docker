@@ -29,9 +29,8 @@ RUN apk --no-cache add \
         php7-pdo_mysql \
         php7-soap \
         php7-xdebug \
-        php7-pcntl
-
-RUN ln -s /usr/bin/php7 /usr/bin/php
+        php7-pcntl \
+        php7-tokenizer
 
 WORKDIR /tmp
 
