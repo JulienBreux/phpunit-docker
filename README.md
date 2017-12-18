@@ -60,7 +60,7 @@
 2. Create a phpunit.xml defining your tests suites.
 
     ``` xml
-...
+    ...
     ```
 
 3. Run PHPUnit through the PHPUnit container:
