@@ -47,7 +47,7 @@ RUN apk --no-cache add \
     && php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
     && php composer-setup.php --install-dir=/usr/bin --filename=composer \
     && php -r "unlink('composer-setup.php');" \
-    && composer require "{{ project.code_name }}/{{ project.code_name }}:~{{ versions.first }}" --prefer-source --no-interaction \
+    && composer require "{{ project.code_name }}/{{ project.code_name }}:^{{ versions.first }}" --prefer-source --no-interaction \
     && composer require "phpunit/php-invoker" --prefer-source --no-interaction \
     && ln -s /tmp/vendor/bin/{{ project.code_name }} /usr/local/bin/{{ project.code_name }} \
     && sed -i 's/nn and/nn, {{ project.author.name }} (Docker) and/g' /tmp/vendor/phpunit/phpunit/src/Runner/Version.php \
