@@ -9,6 +9,7 @@
 
 * [PHPUnit](https://www.phpunit.de/)
   * Latest snapshot (master)
+  * [`7.4.0`](https://github.com/sebastianbergmann/phpunit/blob/7.4/ChangeLog-7.4.md)
   * [`6.5.3`](https://github.com/sebastianbergmann/phpunit/blob/6.5/ChangeLog-6.5.md)
   * [`6.5.2`](https://github.com/sebastianbergmann/phpunit/blob/6.5/ChangeLog-6.5.md)
   * [`6.0.6`](https://github.com/sebastianbergmann/phpunit/blob/6.0/ChangeLog-6.0.md)
