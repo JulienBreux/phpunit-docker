@@ -1,6 +1,6 @@
 # PHPUnit Docker Container.
-FROM alpine:3.7
-LABEL mantainer="Julien Breux <julien.breux@gmail.com>"
+FROM alpine:3.11
+LABEL mantainer="Petro Shpyhotskyi <shpyhotskyi@gmail.com>"
 
 ENV PEAR_PACKAGES foo
 
@@ -47,10 +47,10 @@ RUN apk --no-cache add \
     && php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
     && php composer-setup.php --install-dir=/usr/bin --filename=composer \
     && php -r "unlink('composer-setup.php');" \
-    && composer require "phpunit/phpunit:~6.5.3" --prefer-source --no-interaction \
+    && composer require "phpunit/phpunit:^9.0" --prefer-source --no-interaction \
     && composer require "phpunit/php-invoker" --prefer-source --no-interaction \
     && ln -s /tmp/vendor/bin/phpunit /usr/local/bin/phpunit \
-    && sed -i 's/nn and/nn, Julien Breux (Docker) and/g' /tmp/vendor/phpunit/phpunit/src/Runner/Version.php \
+    && sed -i 's/nn and/nn, Petro Shpyhotskyi (Docker) and/g' /tmp/vendor/phpunit/phpunit/src/Runner/Version.php \
     # Enable X-Debug
     && sed -i 's/\;z/z/g' /etc/php7/conf.d/xdebug.ini \
     && php -m | grep -i xdebug
